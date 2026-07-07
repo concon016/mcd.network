@@ -46,7 +46,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .logo {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   font-size: 19px;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -57,11 +57,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 .logo-dim { color: var(--text-soft); font-weight: 400; }
 
 .logo-icon {
-  height: 5.4em;
-  width: 5.4em;
-  margin-right: 0.35em;
+  height: 1.3em;
+  width: 1.3em;
+  margin-right: 0.1em;
   object-fit: contain;
-  border-radius: 6px;
+  display: block;
 }
 
 .nav-links {
