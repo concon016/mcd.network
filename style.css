@@ -328,9 +328,11 @@ section { padding: 100px 24px; }
 
 .contact-methods {
   display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+  max-width: 360px;
+  margin: 0 auto;
 }
 
 .contact-item {
@@ -338,7 +340,6 @@ section { padding: 100px 24px; }
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius);
   padding: 20px 32px;
-  min-width: 220px;
   transition: background 0.2s ease;
 }
 .contact-item:hover { background: rgba(255, 255, 255, 0.14); }
