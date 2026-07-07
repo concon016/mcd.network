@@ -1,10 +1,12 @@
 // Dark mode toggle
 const themeToggle = document.getElementById("themeToggle");
+const logoIcon = document.getElementById("logoIcon");
 const root = document.documentElement;
 
 function applyTheme(theme) {
   root.setAttribute("data-theme", theme);
   themeToggle.setAttribute("aria-checked", theme === "dark" ? "true" : "false");
+  logoIcon.src = theme === "dark" ? "assets/logo-512-dark.png" : "assets/logo-512.png";
 }
 
 const savedTheme = localStorage.getItem("theme");
