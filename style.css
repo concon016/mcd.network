@@ -385,7 +385,7 @@ section { padding: 100px 24px; }
 }
 
 /* Why */
-.why { padding-bottom: 220px; }
+.why { background: var(--bg-soft); padding-bottom: 220px; }
 
 .why-inner {
   max-width: 820px;
