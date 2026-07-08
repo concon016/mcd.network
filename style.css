@@ -514,6 +514,7 @@ section { padding: 100px 24px; }
   font-size: 15px;
   line-height: 1.6;
 }
+.faq-item p a { color: var(--accent); text-decoration: underline; }
 
 /* Portfolio */
 .portfolio { background: var(--bg-soft); }
