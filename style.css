@@ -119,6 +119,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .nav-links a { color: var(--text); opacity: 0.8; transition: opacity 0.2s; }
 .nav-links a:hover { opacity: 1; }
+.nav-links a.active, .nav-mobile a.active { opacity: 1; font-weight: 700; }
 
 .nav-cta {
   font-size: 13px;
