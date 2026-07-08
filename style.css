@@ -66,7 +66,7 @@ main {
 
 [data-theme="dark"] .theme-toggle-track { background: #48484a; }
 
-.nav, .service-card, .faq-item, .process-step, .contact-item, .portfolio-card, .stat, .btn-secondary {
+.nav, .service-card, .faq-item, .process-step, .contact-item, .portfolio-card, .btn-secondary {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
