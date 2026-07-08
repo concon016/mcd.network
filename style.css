@@ -608,6 +608,7 @@ section { padding: 100px 24px; }
 @media (max-width: 720px) {
   .nav-links, .nav-cta { display: none; }
   .menu-toggle { display: flex; }
+  .nav-actions { margin-left: auto; margin-right: 14px; }
   .service-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: 1fr; }
   .br-desktop { display: inline; }
