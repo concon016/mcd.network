@@ -1,3 +1,20 @@
+// Scroll progress bar
+const scrollProgress = document.createElement("div");
+scrollProgress.className = "scroll-progress";
+document.body.prepend(scrollProgress);
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  scrollProgress.style.width = pct + "%";
+});
+
+// Tab title trick
+const originalTitle = document.title;
+document.addEventListener("visibilitychange", () => {
+  document.title = document.hidden ? "Seni bekliyoruz!" : originalTitle;
+});
+
 // Dark mode toggle
 const themeToggle = document.getElementById("themeToggle");
 const logoIcon = document.getElementById("logoIcon");
