@@ -53,7 +53,8 @@ main {
 [data-theme="dark"] .service-card,
 [data-theme="dark"] .faq-item,
 [data-theme="dark"] .process-step,
-[data-theme="dark"] .contact-item {
+[data-theme="dark"] .contact-item,
+[data-theme="dark"] .portfolio-card {
   background: var(--bg-soft);
   box-shadow: none;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -65,7 +66,7 @@ main {
 
 [data-theme="dark"] .theme-toggle-track { background: #48484a; }
 
-.nav, .service-card, .faq-item, .process-step, .contact-item, .stat, .btn-secondary {
+.nav, .service-card, .faq-item, .process-step, .contact-item, .portfolio-card, .stat, .btn-secondary {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
@@ -477,6 +478,91 @@ section { padding: 100px 24px; }
   color: var(--text-soft);
   font-size: 15px;
   line-height: 1.6;
+}
+
+/* Portfolio */
+.portfolio { background: var(--bg-soft); }
+
+.portfolio-grid {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.portfolio-card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.portfolio-preview {
+  position: relative;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-preview-canfit { background: linear-gradient(135deg, #0a0a0a, #8f0d21); }
+.portfolio-preview-janpitza { background: linear-gradient(135deg, #050507, #ff5533); }
+
+.browser-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.browser-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.portfolio-preview-title {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.portfolio-body { padding: 24px 28px; }
+
+.portfolio-tag {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.portfolio-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+}
+
+.portfolio-card p {
+  color: var(--text-soft);
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .portfolio-grid { grid-template-columns: 1fr; }
 }
 
 /* Contact */
