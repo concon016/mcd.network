@@ -114,11 +114,13 @@ if (contactForm) {
     formStatus.textContent = "";
     formStatus.className = "form-status";
 
+    const formData = Object.fromEntries(new FormData(contactForm));
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(Object.fromEntries(new FormData(contactForm))),
+        body: JSON.stringify(formData),
       });
       const result = await response.json();
 
@@ -127,6 +129,17 @@ if (contactForm) {
         formStatus.classList.add("success");
         fireConfetti(submitBtn);
         contactForm.reset();
+
+        // En kısa sürede dönüş yapabilmemiz için mesajı admin panelinde de saklıyoruz (e-posta akışını etkilemez).
+        fetch("/api/messages", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            adSoyad: formData.name,
+            eposta: formData.email,
+            mesaj: formData.message,
+          }),
+        }).catch((err) => console.error("Mesaj admin paneline kaydedilemedi:", err));
       } else {
         throw new Error(result.message || "Gönderim başarısız");
       }
