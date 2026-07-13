@@ -161,8 +161,7 @@ if (serviceCheckboxes.length) {
 
     if (serviceNudge) {
       const wantsWebsite = selected.includes("Web Sitesi Tasarımı");
-      const hasComplementary =
-        selected.includes("Haritada Görünürlük") && selected.includes("Google Arama & Reklam Yönetimi");
+      const hasComplementary = selected.includes("Haritada Görünürlük");
       serviceNudge.hidden = !(wantsWebsite && !hasComplementary);
     }
 
