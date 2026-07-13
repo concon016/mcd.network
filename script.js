@@ -158,6 +158,14 @@ if (serviceCheckboxes.length) {
     return `${items.slice(0, -1).join(", ")} ve ${items[items.length - 1]}`;
   }
 
+  function getSelectedServices() {
+    const selected = [];
+    serviceCheckboxes.forEach((checkbox) => {
+      if (checkbox.checked) selected.push(checkbox.closest(".service-card").dataset.service);
+    });
+    return selected;
+  }
+
   function updateServiceSelection() {
     const selected = [];
     serviceCheckboxes.forEach((checkbox) => {
@@ -200,6 +208,24 @@ if (serviceCheckboxes.length) {
 
   serviceCheckboxes.forEach((checkbox) => checkbox.addEventListener("change", updateServiceSelection));
   updateServiceSelection();
+
+  if (serviceContactBtn) {
+    serviceContactBtn.addEventListener("click", (e) => {
+      const selected = getSelectedServices();
+      const wantsWebsite = selected.includes("Web Sitesi Tasarımı");
+      const missing = complementaryServices.filter((s) => !selected.includes(s));
+      if (wantsWebsite && missing.length) {
+        const isPlural = missing.length > 1;
+        const missingText = missing.join(" ve ");
+        const confirmed = confirm(
+          `${missingText} ${isPlural ? "hizmetlerini" : "hizmetini"} seçmediniz. Bu ${
+            isPlural ? "hizmetler sitenizin" : "hizmet sitenizin"
+          } gerçekten bulunabilir olması için önemlidir. Yine de devam etmek istiyor musunuz?`
+        );
+        if (!confirmed) e.preventDefault();
+      }
+    });
+  }
 }
 
 // Contact form
