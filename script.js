@@ -152,6 +152,12 @@ if (serviceCheckboxes.length) {
   const serviceSelectCount = document.getElementById("serviceSelectCount");
   const complementaryServices = ["Haritada Görünürlük", "Google Arama & Reklam Yönetimi"];
 
+  function joinWithVe(services) {
+    const items = services.map((s) => `<strong>${s}</strong>`);
+    if (items.length < 2) return items.join("");
+    return `${items.slice(0, -1).join(", ")} ve ${items[items.length - 1]}`;
+  }
+
   function updateServiceSelection() {
     const selected = [];
     serviceCheckboxes.forEach((checkbox) => {
@@ -162,11 +168,13 @@ if (serviceCheckboxes.length) {
 
     if (serviceNudge) {
       const wantsWebsite = selected.includes("Web Sitesi Tasarımı");
+      const chosen = ["Web Sitesi Tasarımı", ...complementaryServices].filter((s) => selected.includes(s));
       const missing = complementaryServices.filter((s) => !selected.includes(s));
       if (wantsWebsite && missing.length) {
-        const list = missing.map((s) => `<strong>${s}</strong>`).join(" ve ");
+        const chosenList = joinWithVe(chosen);
+        const missingList = joinWithVe(missing);
         const isPlural = missing.length > 1;
-        serviceNudge.innerHTML = `Sadece <strong>Web Sitesi Tasarımı</strong> seçtiniz — ${list} ${
+        serviceNudge.innerHTML = `${chosenList} seçtiniz — ${missingList} ${
           isPlural ? "hizmetlerini" : "hizmetini"
         } de eklemenizi öneririz. ${
           isPlural
