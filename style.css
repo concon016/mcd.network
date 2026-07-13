@@ -357,6 +357,8 @@ section { padding: 100px 24px; }
   gap: 20px;
 }
 
+.section-cta { text-align: center; margin: 48px auto 0; }
+
 .service-card {
   background: #fff;
   border-radius: var(--radius);
