@@ -418,6 +418,12 @@ section { padding: 100px 24px; }
   margin-right: 6px;
 }
 
+.price .price-cents {
+  font-size: 14px;
+  font-weight: 600;
+  vertical-align: super;
+}
+
 .price .price-try {
   display: block;
   font-size: 12px;
