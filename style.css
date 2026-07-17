@@ -421,7 +421,7 @@ section { padding: 100px 24px; }
 .price .price-cents {
   font-size: 14px;
   font-weight: 600;
-  vertical-align: super;
+  vertical-align: sub;
 }
 
 .price .price-try {
