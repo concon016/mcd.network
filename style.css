@@ -419,9 +419,9 @@ section { padding: 100px 24px; }
 }
 
 .price .price-cents {
-  font-size: 14px;
-  font-weight: 600;
-  vertical-align: sub;
+  font-size: inherit;
+  font-weight: inherit;
+  vertical-align: baseline;
 }
 
 .price .price-try {
