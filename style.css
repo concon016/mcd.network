@@ -116,7 +116,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 .logo-word { white-space: nowrap; }
-.logo-dim { color: var(--text-soft); font-weight: 400; }
+.logo-dim { color: var(--accent); font-weight: 700; }
 
 .logo-icon {
   height: 1.3em;
