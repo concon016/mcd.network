@@ -928,6 +928,7 @@ section { padding: 100px 24px; }
 .portfolio-preview-guncelkira { background: linear-gradient(135deg, #0f2f66, #2f6fed); }
 .portfolio-preview-anonimbutik { background: linear-gradient(135deg, #f2efe9, #1a1a1a); }
 .portfolio-preview-anonimhukukburosu { background: linear-gradient(135deg, #0a1830, #a3812f); }
+.portfolio-preview-anonimpsikolog { background: linear-gradient(135deg, #222b1c, #c2704f); }
 
 .portfolio-live-badge {
   position: absolute;
