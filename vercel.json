@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "canwebco.com.tr"
+        }
+      ],
+      "destination": "https://canwebco.com/:path*",
+      "permanent": true
+    }
+  ]
+}
